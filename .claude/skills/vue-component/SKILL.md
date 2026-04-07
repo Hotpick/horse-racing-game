@@ -32,6 +32,33 @@ Generates consistent, production-quality Vue 3 code for the horse racing game pr
 
 ---
 
+## AI Traceability
+
+Every file produced by this skill must include an AI trace header. This is a project requirement.
+
+For `.ts` / `.spec.ts` files — first lines:
+```ts
+// @ai-generated
+// Implements: TASK-XXX — [task title from TASKS.md]
+// Spec ref:   SPEC.md §[relevant section, e.g. §2.7]
+```
+
+For `.vue` files — inside `<script setup>`, first lines:
+```ts
+// @ai-generated
+// Implements: TASK-XXX — [task title]
+// Spec ref:   SPEC.md §[section]
+```
+
+Add inline comments for any non-trivial logic, referencing the spec formula or ARCHITECTURE.md decision. Example:
+```ts
+// Race tick formula — SPEC.md §2.7
+// Variance [0.7, 1.3] gives ~30% upset chance for lower-condition horses
+const step = (horse.condition / 100) * baseSpeed * (0.7 + Math.random() * 0.6)
+```
+
+---
+
 ## Output Format
 
 For every request, produce all three artifacts:
@@ -40,7 +67,7 @@ For every request, produce all three artifacts:
 
 Arrange `<script setup>` sections in this order:
 ```
-imports → type definitions → defineProps/defineEmits → composables/stores → refs/reactive → computed → functions → lifecycle hooks
+// @ai-generated header → imports → type definitions → defineProps/defineEmits → composables/stores → refs/reactive → computed → functions → lifecycle hooks
 ```
 
 ### 2. Co-located unit test (`ComponentName.spec.ts`)

@@ -170,7 +170,37 @@ enum RaceStatus { Idle, Generating, Running, Paused, Finished }
 
 ---
 
-## 8. Code Style Rules
+## 8. AI Traceability
+
+Every AI-generated source file must carry a header and inline comments that make the AI's role and reasoning explicit.
+
+**File header** (top of every `.ts` / `.vue`):
+```ts
+// @ai-generated
+// Implements: TASK-XXX — [task title]
+// Spec ref:   SPEC.md §[section]
+```
+
+**Algorithm comments** — reference the spec formula or decision directly:
+```ts
+// Race engine tick — SPEC.md §2.7
+// step = (condition / 100) * baseSpeed * (0.7 + rand * 0.6)
+```
+
+**Decision comments** — explain non-obvious choices:
+```ts
+// setInterval over rAF — deterministic ticks are easier to test with vi.useFakeTimers()
+// See ARCHITECTURE.md §4.1
+```
+
+**Commit footer**:
+```
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+```
+
+---
+
+## 9. Code Style Rules
 
 - All components use `<script setup lang="ts">`
 - Props defined via `defineProps<{...}>()`, emits via `defineEmits<{...}>()`
@@ -181,6 +211,6 @@ enum RaceStatus { Idle, Generating, Running, Paused, Finished }
 
 ---
 
-## 9. Open Technical Questions
+## 10. Open Technical Questions
 
 - [ ] Persist horse list / results between sessions? (localStorage vs none — leaning none for v1)
