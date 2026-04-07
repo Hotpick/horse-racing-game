@@ -1,7 +1,7 @@
 # TASKS.md — Horse Racing Game
 
 > Generated: 2026-04-07
-> Total: 40 tasks | Completed: 0
+> Total: 40 tasks | Completed: 40
 
 ---
 
@@ -14,7 +14,7 @@
 **Type:** config
 **File:** `package.json`, `vite.config.ts`, `tsconfig.json`
 **Depends on:** none
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Scaffold the project with `npm create vue@latest` selecting Vue 3, TypeScript, Vue Router, Pinia, Vitest, ESLint + Prettier. Verify `npm run dev` starts without errors.
@@ -31,7 +31,7 @@ Scaffold the project with `npm create vue@latest` selecting Vue 3, TypeScript, V
 **Type:** config
 **File:** `.eslintrc.cjs`, `.prettierrc`
 **Depends on:** TASK-001
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Configure ESLint with `@vue/eslint-config-typescript` and `eslint-config-prettier`. Add `.prettierrc` with project defaults (single quotes, no semicolons, 2-space indent). Add `lint` script to `package.json`.
@@ -48,7 +48,7 @@ Configure ESLint with `@vue/eslint-config-typescript` and `eslint-config-prettie
 **Type:** config
 **File:** `tailwind.config.ts`, `src/assets/index.css`, `components.json`
 **Depends on:** TASK-001
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Install Tailwind CSS via the shadcn-vue setup guide. Initialize shadcn-vue (`npx shadcn-vue@latest init`). Add custom color tokens to `tailwind.config.ts`: `panel-program`, `panel-results`, `panel-horses`, `track-lane`, `track-bg`. Verify a shadcn-vue `Button` renders correctly in `App.vue`.
@@ -65,7 +65,7 @@ Install Tailwind CSS via the shadcn-vue setup guide. Initialize shadcn-vue (`npx
 **Type:** config
 **File:** `vitest.config.ts`
 **Depends on:** TASK-001
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Configure Vitest with `@vue/test-utils` and `jsdom` environment. Add `test:unit` script. Ensure a sample test file runs with `npm run test:unit`.
@@ -82,7 +82,7 @@ Configure Vitest with `@vue/test-utils` and `jsdom` environment. Add `test:unit`
 **Type:** config
 **File:** `playwright.config.ts`
 **Depends on:** TASK-001
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Install and configure Playwright for Chromium. Add `test:e2e` script. Create an `e2e/` directory with a smoke test that navigates to `localhost` and checks the page title.
@@ -99,7 +99,7 @@ Install and configure Playwright for Chromium. Add `test:e2e` script. Create an 
 **Type:** config
 **File:** `package.json`
 **Depends on:** TASK-002, TASK-004, TASK-005
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Ensure all required scripts exist: `dev`, `build`, `preview`, `type-check`, `lint`, `test:unit`, `test:e2e`. `type-check` must use `vue-tsc --noEmit`.
@@ -119,7 +119,7 @@ Ensure all required scripts exist: `dev`, `build`, `preview`, `type-check`, `lin
 **Type:** type
 **File:** `src/types/horse.ts`, `src/types/race.ts`
 **Depends on:** TASK-001
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Define and export: `Horse` (id, name, condition, color), `HorsePosition` (horseId, position 0–100), `Round` (id, number, distance, horseIds), `RaceSchedule` (rounds array). No `any` types. Use `Readonly` where values should not mutate.
@@ -137,7 +137,7 @@ Define and export: `Horse` (id, name, condition, color), `HorsePosition` (horseI
 **Type:** type
 **File:** `src/types/gameState.ts`
 **Depends on:** TASK-007
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Define `RaceStatus` enum (`Idle | Generating | Running | Paused | Finished`), `GameState` interface (status, currentRoundIndex, horses, schedule, results), and `RoundResult` interface (roundNumber, positions ordered by finish).
@@ -158,7 +158,7 @@ Define `RaceStatus` enum (`Idle | Generating | Running | Paused | Finished`), `G
 **Type:** util
 **File:** `src/utils/horseNames.ts`
 **Depends on:** none
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Export `ADJECTIVES` and `NOUNS` word lists (20 each, as defined in SPEC §2.8). Export pure function `generateHorseNames(count: number): string[]` that shuffles both lists and pairs them index-by-index to produce `count` unique `"Adjective Noun"` names.
@@ -176,7 +176,7 @@ Export `ADJECTIVES` and `NOUNS` word lists (20 each, as defined in SPEC §2.8). 
 **Type:** test:unit
 **File:** `src/utils/horseNames.spec.ts`
 **Depends on:** TASK-009
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Vitest suite covering: correct count returned, all names unique, format matches `/^\w+ \w+$/`, both word lists are exported and each has 20 items.
@@ -194,7 +194,7 @@ Vitest suite covering: correct count returned, all names unique, format matches 
 **Type:** util
 **File:** `src/utils/horseColors.ts`
 **Depends on:** none
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Export `HORSE_COLORS` — an array of exactly 20 visually distinct hex color strings. Export `assignColors(count: number): string[]` that returns `count` colors from the palette in shuffled order (no repeats within a call).
@@ -212,7 +212,7 @@ Export `HORSE_COLORS` — an array of exactly 20 visually distinct hex color str
 **Type:** test:unit
 **File:** `src/utils/horseColors.spec.ts`
 **Depends on:** TASK-011
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Vitest suite: palette length, valid hex format, no duplicates in palette, `assignColors` returns correct count with no duplicates.
@@ -230,7 +230,7 @@ Vitest suite: palette length, valid hex format, no duplicates in palette, `assig
 **Type:** util
 **File:** `src/utils/generateHorsePool.ts`
 **Depends on:** TASK-007, TASK-009, TASK-011
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Export pure function `generateHorsePool(): Horse[]` that creates exactly 20 horses, each with a unique `id` (uuid or index-based), name from `generateHorseNames`, condition randomly sampled from 1–100, and color from `assignColors`. Returns a frozen array.
@@ -249,7 +249,7 @@ Export pure function `generateHorsePool(): Horse[]` that creates exactly 20 hors
 **Type:** test:unit
 **File:** `src/utils/generateHorsePool.spec.ts`
 **Depends on:** TASK-013
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Vitest suite: pool length, uniqueness of id/name/color, condition range validation.
@@ -267,7 +267,7 @@ Vitest suite: pool length, uniqueness of id/name/color, condition range validati
 **Type:** util
 **File:** `src/utils/generateSchedule.ts`
 **Depends on:** TASK-007
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Export `ROUND_DISTANCES: number[]` = `[1200, 1400, 1600, 1800, 2000, 2200]` and `TICKS_PER_ROUND: number[]` = `[150, 175, 200, 225, 250, 275]`. Export pure function `generateSchedule(horses: Horse[]): RaceSchedule` that creates 6 rounds, each with 10 randomly selected horse ids from the pool (without replacement per round, but horses can appear in multiple rounds).
@@ -285,7 +285,7 @@ Export `ROUND_DISTANCES: number[]` = `[1200, 1400, 1600, 1800, 2000, 2200]` and 
 **Type:** test:unit
 **File:** `src/utils/generateSchedule.spec.ts`
 **Depends on:** TASK-015
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Vitest suite: correct number of rounds, correct distances, 10 horses per round, no duplicate ids within a round, all ids valid.
@@ -303,7 +303,7 @@ Vitest suite: correct number of rounds, correct distances, 10 horses per round, 
 **Type:** util
 **File:** `src/utils/raceEngine.ts`
 **Depends on:** TASK-007, TASK-008
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Export pure function `computeTick(positions: HorsePosition[], horses: Horse[], baseSpeed: number): HorsePosition[]` that advances each horse by `(condition/100) * baseSpeed * (0.7 + Math.random() * 0.6)`. Export `computeBaseSpeed(trackWidth: number, ticks: number): number` = `trackWidth / ticks`. Export `getRoundWinner(positions: HorsePosition[]): string` (returns horseId of first to reach position >= trackWidth). No side effects, no Vue imports.
@@ -322,7 +322,7 @@ Export pure function `computeTick(positions: HorsePosition[], horses: Horse[], b
 **Type:** test:unit
 **File:** `src/utils/raceEngine.spec.ts`
 **Depends on:** TASK-017
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Vitest suite: immutability of `computeTick`, position increases, `computeBaseSpeed` calculation, `getRoundWinner` picks the correct horse.
@@ -344,7 +344,7 @@ Vitest suite: immutability of `computeTick`, position increases, `computeBaseSpe
 **Type:** store
 **File:** `src/stores/raceStore.ts`
 **Depends on:** TASK-007, TASK-008, TASK-013, TASK-015, TASK-017
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Pinia setup store (`defineStore('race', () => {...})`). State: `status: Ref<RaceStatus>`, `horses: Ref<Horse[]>`, `schedule: Ref<RaceSchedule | null>`, `currentRoundIndex: Ref<number>`, `positions: Ref<HorsePosition[]>`, `results: Ref<RoundResult[]>`. Actions: `generateProgram()` (calls pool + schedule generators), `startRace()`, `pauseRace()`, `resumeRace()`, `advanceTick()` (calls `computeTick`, checks for winner, advances round or finishes race), `resetRace()`.
@@ -363,7 +363,7 @@ Pinia setup store (`defineStore('race', () => {...})`). State: `status: Ref<Race
 **Type:** test:unit
 **File:** `src/stores/raceStore.spec.ts`
 **Depends on:** TASK-019
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Vitest suite using `setActivePinia(createPinia())`. Test each action: `generateProgram` populates state, `startRace` changes status, `pauseRace` freezes state, `advanceTick` progresses positions, round completion appends result.
@@ -386,7 +386,7 @@ Vitest suite using `setActivePinia(createPinia())`. Test each action: `generateP
 **Type:** composable
 **File:** `src/composables/useRaceAnimation.ts`
 **Depends on:** TASK-019
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Composable that drives the race loop: starts `setInterval` at 100ms calling `raceStore.advanceTick()`, and a `requestAnimationFrame` loop that reads `raceStore.positions` and writes interpolated values to a `Ref<HorsePosition[]>` (lerp between last and current tick). Exposes `{ animatedPositions, start, pause, resume }`. Cleans up interval and rAF on `onUnmounted`.
@@ -405,7 +405,7 @@ Composable that drives the race loop: starts `setInterval` at 100ms calling `rac
 **Type:** test:unit
 **File:** `src/composables/useRaceAnimation.spec.ts`
 **Depends on:** TASK-021
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Vitest suite using `vi.useFakeTimers()` and mocked `requestAnimationFrame`. Test: `start()` calls `advanceTick` after 100ms, `pause()` stops the interval, `resume()` restarts it, cleanup on unmount.
@@ -427,7 +427,7 @@ Vitest suite using `vi.useFakeTimers()` and mocked `requestAnimationFrame`. Test
 **Type:** component
 **File:** `src/components/AppHeader.vue`
 **Depends on:** TASK-019
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Sticky header (`h-14`, coral/salmon background as per design). Left: "Horse Racing" title. Right: "Generate Program" button (disabled during Running/Paused) and "Start / Pause" button (disabled before program generated). Buttons read `raceStore.status` to compute disabled state and label ("Start" vs "Pause"). Emit no events — call store actions directly.
@@ -445,7 +445,7 @@ Sticky header (`h-14`, coral/salmon background as per design). Left: "Horse Raci
 **Type:** test:unit
 **File:** `src/components/AppHeader.spec.ts`
 **Depends on:** TASK-023
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Vue Test Utils suite: renders title, button states match RaceStatus, correct labels shown for each status.
@@ -463,7 +463,7 @@ Vue Test Utils suite: renders title, button states match RaceStatus, correct lab
 **Type:** component
 **File:** `src/components/race/HorseListPanel.vue`
 **Depends on:** TASK-007, TASK-019
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Scrollable panel showing all 20 horses in a shadcn-vue `Table`. Columns: Name, Condition (number), Color (filled circle swatch). Panel header "Horse List (1–20)" with yellow background. Empty state when `horses` is empty (before generate). Reads from `raceStore.horses`.
@@ -482,7 +482,7 @@ Scrollable panel showing all 20 horses in a shadcn-vue `Table`. Columns: Name, C
 **Type:** test:unit
 **File:** `src/components/race/HorseListPanel.spec.ts`
 **Depends on:** TASK-025
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Suite: renders correct row count, row content matches horse data, empty state visible when no horses.
@@ -500,7 +500,7 @@ Suite: renders correct row count, row content matches horse data, empty state vi
 **Type:** component
 **File:** `src/components/race/RaceTrack.vue`
 **Depends on:** TASK-007, TASK-021
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Animated race track. Receives `horses: Horse[]` (current round participants) and `animatedPositions: HorsePosition[]` as props. Renders 10 lanes: left strip with lane number (green background), track area with horse silhouette positioned via `transform: translateX(position%)`, red finish line on right edge. Bottom label shows current round (e.g. "1st Lap 1200m") and "FINISH". Scales to container width (no fixed pixel widths).
@@ -519,7 +519,7 @@ Animated race track. Receives `horses: Horse[]` (current round participants) and
 **Type:** test:unit
 **File:** `src/components/race/RaceTrack.spec.ts`
 **Depends on:** TASK-027
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Suite: correct lane count, horse transform reflects position, round label renders correctly.
@@ -537,7 +537,7 @@ Suite: correct lane count, horse transform reflects position, round label render
 **Type:** component
 **File:** `src/components/race/ProgramPanel.vue`
 **Depends on:** TASK-007, TASK-019
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Scrollable panel with blue header "Program". Shows all 6 rounds grouped by lap, each with a sub-header (e.g. "1ST Lap – 1200m") and a table of Position + Name. Populated from `raceStore.schedule`. Empty state before generate. Positions in program are pre-race lineup order (1–10 by schedule index).
@@ -556,7 +556,7 @@ Scrollable panel with blue header "Program". Shows all 6 rounds grouped by lap, 
 **Type:** test:unit
 **File:** `src/components/race/ProgramPanel.spec.ts`
 **Depends on:** TASK-029
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Suite: section count, header labels, row count per section, empty state.
@@ -574,7 +574,7 @@ Suite: section count, header labels, row count per section, empty state.
 **Type:** component
 **File:** `src/components/race/ResultsPanel.vue`
 **Depends on:** TASK-007, TASK-008, TASK-019
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Scrollable panel with green header "Results". Same structure as ProgramPanel but populated from `raceStore.results` — only shows rounds that have been completed. Each section shows horses ranked by finish position. Empty state before any round completes.
@@ -592,7 +592,7 @@ Scrollable panel with green header "Results". Same structure as ProgramPanel but
 **Type:** test:unit
 **File:** `src/components/race/ResultsPanel.spec.ts`
 **Depends on:** TASK-031
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Suite: empty state, section count matches completed rounds, positions ranked correctly.
@@ -610,7 +610,7 @@ Suite: empty state, section count matches completed rounds, positions ranked cor
 **Type:** component
 **File:** `src/components/MobileTabBar.vue`
 **Depends on:** TASK-025, TASK-027, TASK-029, TASK-031
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Mobile-only tab navigation using shadcn-vue `Tabs`. Four equal-width tabs: Horses | Track | Program | Results. Active tab auto-switches to Track when `raceStore.status` changes to `Running`. Results tab shows a red badge dot when new results arrive while not on the Results tab. Renders the correct panel component for each active tab.
@@ -629,7 +629,7 @@ Mobile-only tab navigation using shadcn-vue `Tabs`. Four equal-width tabs: Horse
 **Type:** test:unit
 **File:** `src/components/MobileTabBar.spec.ts`
 **Depends on:** TASK-033
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Suite: 4 tabs rendered, correct panel shown for active tab, auto-switch on race start, badge logic.
@@ -652,7 +652,7 @@ Suite: 4 tabs rendered, correct panel shown for active tab, auto-switch on race 
 **Type:** view
 **File:** `src/views/GameView.vue`
 **Depends on:** TASK-023, TASK-025, TASK-027, TASK-029, TASK-031, TASK-033, TASK-021
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Root view. Renders `AppHeader` (sticky top). Desktop layout (`hidden md:grid`, 4-column grid): `HorseListPanel` | `RaceTrack` | `ProgramPanel` | `ResultsPanel`. Mobile layout (`block md:hidden`): `MobileTabBar`. Instantiates `useRaceAnimation` here and passes `animatedPositions` to `RaceTrack`. Wires store status to composable `start/pause/resume`.
@@ -671,7 +671,7 @@ Root view. Renders `AppHeader` (sticky top). Desktop layout (`hidden md:grid`, 4
 **Type:** test:unit
 **File:** `src/views/GameView.spec.ts`
 **Depends on:** TASK-035
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Suite: AppHeader rendered, desktop panels present in DOM, MobileTabBar present in DOM, animation composable wired to store status changes.
@@ -693,7 +693,7 @@ Suite: AppHeader rendered, desktop panels present in DOM, MobileTabBar present i
 **Type:** test:e2e
 **File:** `e2e/generateProgram.spec.ts`
 **Depends on:** TASK-036
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Playwright test: navigate to `/`, click "Generate Program", assert horse list shows 20 rows, program panel shows 6 sections, Start button is enabled.
@@ -711,7 +711,7 @@ Playwright test: navigate to `/`, click "Generate Program", assert horse list sh
 **Type:** test:e2e
 **File:** `e2e/raceExecution.spec.ts`
 **Depends on:** TASK-037
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Playwright test: generate program, click Start, wait for all 6 rounds to complete, assert Results panel has 6 sections each with 10 rows.
@@ -729,7 +729,7 @@ Playwright test: generate program, click Start, wait for all 6 rounds to complet
 **Type:** test:e2e
 **File:** `e2e/pauseResume.spec.ts`
 **Depends on:** TASK-038
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Playwright test: generate + start, click Pause after 1 second, assert horse positions do not change for 2 seconds, click Resume, assert positions resume changing.
@@ -747,7 +747,7 @@ Playwright test: generate + start, click Pause after 1 second, assert horse posi
 **Type:** test:e2e
 **File:** `e2e/mobileLayout.spec.ts`
 **Depends on:** TASK-037
-**Status:** `[ ]` pending
+**Status:** `[x]` done
 
 **What to build:**
 Playwright test at 375px viewport: assert desktop panels are hidden, tab bar is visible, clicking each tab shows correct content, starting race auto-switches to Track tab.
