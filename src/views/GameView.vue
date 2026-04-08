@@ -50,8 +50,10 @@ const currentRoundHorses = computed(() => {
   <div class="h-screen overflow-hidden flex flex-col">
     <AppHeader />
 
-    <!-- Desktop 4-panel grid — hidden below md — SPEC.md §5 -->
-    <div class="hidden md:grid md:grid-cols-[220px_1fr_200px_200px] flex-1 overflow-hidden">
+    <!-- Desktop 4-panel grid — hidden below md — SPEC.md §5
+         md (768px): tighter fixed cols so the track gets enough room on tablets
+         lg (1024px+): restore full-size fixed cols -->
+    <div class="hidden md:grid md:grid-cols-[180px_1fr_160px_160px] lg:grid-cols-[220px_1fr_200px_200px] flex-1 overflow-hidden">
       <HorseListPanel />
       <RaceTrack
         :horses="currentRoundHorses"

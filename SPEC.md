@@ -183,16 +183,16 @@ tickStep = (condition / 100) * BASE_SPEED * (0.7 + Math.random() * 0.6)
 
 ### Round Duration Strategy
 
-All rounds have the **same screen duration (~45 seconds)**. `BASE_SPEED` is scaled per round so horses cover the full track width regardless of distance. However, longer rounds use **more ticks** to simulate the same animation, which means more variance accumulates and more overtaking occurs. This makes longer rounds feel more dramatic without making the user wait longer.
+All rounds have the **same screen duration (~10–18 seconds)**. `BASE_SPEED` is scaled per round so horses cover the full track width regardless of distance. However, longer rounds use **more ticks** to simulate the same animation, which means more variance accumulates and more overtaking occurs. This makes longer rounds feel more dramatic without making the user wait longer.
 
 | Round | Distance | Ticks | Feel |
 |-------|----------|-------|------|
-| 1 | 1200 m | 150 | Fast, clean result |
-| 2 | 1400 m | 175 | — |
-| 3 | 1600 m | 200 | — |
-| 4 | 1800 m | 225 | — |
-| 5 | 2000 m | 250 | More overtaking |
-| 6 | 2200 m | 275 | Maximum drama |
+| 1 | 1200 m | 100 | Fast, clean result |
+| 2 | 1400 m | 115 | — |
+| 3 | 1600 m | 130 | — |
+| 4 | 1800 m | 145 | — |
+| 5 | 2000 m | 160 | More overtaking |
+| 6 | 2200 m | 175 | Maximum drama |
 
 `BASE_SPEED = trackWidth / ticks` per round (recalculated at round start)
 

@@ -58,6 +58,7 @@ export const useRaceStore = defineStore('race', () => {
    */
   function startRace() {
     currentRoundIndex.value = 0
+    results.value = []
     initPositionsForRound()
     status.value = RaceStatus.Running
   }

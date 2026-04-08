@@ -11,7 +11,7 @@ export const ROUND_DISTANCES: readonly number[] = [1200, 1400, 1600, 1800, 2000,
  * Ticks per round — SPEC.md §2.7
  * Longer rounds use more ticks so variance accumulates and overtaking increases.
  */
-export const TICKS_PER_ROUND: readonly number[] = [150, 175, 200, 225, 250, 275]
+export const TICKS_PER_ROUND: readonly number[] = [100, 115, 130, 145, 160, 175]
 
 /**
  * Pick `count` random elements from `arr` without replacement.

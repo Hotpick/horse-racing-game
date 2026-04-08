@@ -167,6 +167,7 @@ enum RaceStatus { Idle, Generating, Running, Paused, Finished }
 | Test runner | Vitest | Same config as Vite, fast, compatible with Vue Test Utils |
 | E2E | Playwright | More reliable than Cypress for async-heavy games, multi-browser |
 | Animation strategy | rAF + fixed interval | Engine ticks every 100ms (testable); rAF interpolates for smooth 60fps render |
+| Race duration | 100–175 ticks/round | Reduced from 150–275 for faster pacing (~10–18s per round) |
 
 ---
 

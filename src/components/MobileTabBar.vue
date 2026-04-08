@@ -60,8 +60,10 @@ const currentRoundHorses = () => {
 
 <template>
   <!-- Mobile-only — hidden on md+ screens — SPEC.md §5 -->
-  <div class="block md:hidden h-full flex flex-col">
-    <Tabs :model-value="activeTab" class="flex flex-col h-full" @update:model-value="onTabChange">
+  <!-- flex not block — both set display, flex must win — SPEC.md §5 -->
+  <!-- w-full needed: parent is a flex row so children don't stretch horizontally by default -->
+  <div class="flex md:hidden h-full w-full flex-col">
+    <Tabs :model-value="activeTab" class="flex flex-col h-full w-full" @update:model-value="onTabChange">
       <!-- Tab bar -->
       <TabsList class="shrink-0 w-full grid grid-cols-4 rounded-none h-10">
         <TabsTrigger value="horses" class="text-xs">Horses</TabsTrigger>
